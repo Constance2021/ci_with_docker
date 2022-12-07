@@ -33,7 +33,7 @@ jobs:
       run: |
         python3 -m unittest
         
-   docker-build:
+  docker-build:
     runs-on: ubuntu-latest
     needs: build
     steps:
