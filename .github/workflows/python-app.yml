@@ -31,4 +31,4 @@ jobs:
     
     - name: Test with unittest
       run: |
-        python unittest
+        python3 -m unittest
