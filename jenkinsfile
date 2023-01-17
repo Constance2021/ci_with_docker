@@ -9,7 +9,20 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker buid -t jenk-image'
+                echo "building"
+                bat 'docker build -t jenk-image .'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing"
+                bat 'C:/Users/HP/AppData/Local/Programs/Python/Python310/python -m unittest'
+            }
+        }
+         stage('Deploy') {
+            steps {
+                echo "deploying"
+                bat 'docker run jenk-image'
             }
         }
     }
